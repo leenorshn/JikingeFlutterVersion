@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class AddSuggestionScreen extends StatefulWidget {
   @override
@@ -10,6 +11,18 @@ class _AddSuggestionScreenState extends State<AddSuggestionScreen> {
   String _suggestion;
 
   void _soumettre() {}
+
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     GlobalKey _key = GlobalKey();

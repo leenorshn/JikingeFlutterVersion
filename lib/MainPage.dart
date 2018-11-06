@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import 'package:jikinge/pages/ConseilPage.dart';
 import 'package:jikinge/pages/HomePage.dart';
 import 'package:jikinge/pages/StatistiquePage.dart';
@@ -19,12 +20,24 @@ class _MainPageState extends State<MainPage>  with SingleTickerProviderStateMixi
   @override
   void initState() {
     super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+    ]);
+
     _tabController=TabController(length: 3, vsync: this,initialIndex: 0);
   }
   @override
   void dispose() {
     super.dispose();
     _tabController.dispose();
+
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
   }
   @override
   Widget build(BuildContext context) {

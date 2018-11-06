@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:jikinge/MainPage.dart';
 
-void main() => runApp(new EbolaApp());
+void main() {
+  SystemChrome.setPreferredOrientations([
+
+    DeviceOrientation.portraitUp,
+    // DeviceOrientation.portraitDown
+  ]).then((_) {
+    runApp(EbolaApp());
+  });
+}
 
 class EbolaApp extends StatelessWidget {
   @override

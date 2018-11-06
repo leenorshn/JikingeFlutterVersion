@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:jikinge/screens/ModeExpertScreen.dart';
 
 class SecretCode extends StatefulWidget {
@@ -19,6 +20,18 @@ class _SecretCodeState extends State<SecretCode> {
       print("mode expert erreur code");
     }
   }
+
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
 
