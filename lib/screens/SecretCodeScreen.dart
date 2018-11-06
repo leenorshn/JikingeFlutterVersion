@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:jikinge/screens/ModeExpertScreen.dart';
 
 class SecretCode extends StatefulWidget {
@@ -38,9 +38,12 @@ class _SecretCodeState extends State<SecretCode> {
                Container(
                  width: 200.0,
                  child: new TextFormField(
+                   textAlign: TextAlign.center,
                    obscureText: true,
                    onSaved: (value)=>_secretMot=int.parse(value),
-                  decoration: InputDecoration(labelText: "Code SMS",border: OutlineInputBorder(borderRadius: BorderRadius.circular(30.0))),
+                   decoration: InputDecoration(labelText: "Code SMS",
+                       border: OutlineInputBorder(
+                         borderRadius: BorderRadius.circular(30.0),)),
                    
 
                  ),

@@ -13,20 +13,10 @@ class CardConseilItem extends StatelessWidget {
     return Card(
       child:new Container(
         padding: EdgeInsets.all(8.0),
-        child:new Column(
-          children: <Widget>[
-          new  Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(titre,style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.w700),),
-                Text(date,style: TextStyle(fontSize: 14.0,fontWeight: FontWeight.w400,color: Colors.grey))
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(conseil),
-            )
-          ],
+        child: ListTile(
+          title: Text(titre),
+          subtitle: Text("${conseil.substring(0, 30)} ..."),
+          trailing: Text(date),
         ),
       ),
     );
