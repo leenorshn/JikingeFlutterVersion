@@ -37,6 +37,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 27
         versionCode flutterVersionCode.toInteger()
+        multiDexEnabled true
         versionName flutterVersionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -61,3 +62,4 @@ dependencies {
 }
 
 apply plugin: 'com.google.gms.google-services'
+//'com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck'= true

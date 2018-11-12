@@ -35,6 +35,8 @@ class _StatistiquePageState extends State<StatistiquePage> {
                 return Center(child: SmartLoader());
               } else {
                 return ListView.builder(
+                    padding: EdgeInsets.symmetric(
+                        vertical: 12.0, horizontal: 12.0),
                     itemCount: snapshot.data.length,
                     itemBuilder: (context, index) {
                       return Card(
@@ -55,7 +57,7 @@ class _StatistiquePageState extends State<StatistiquePage> {
                             ),
                             ExpansionTile(
                               title: const Text(
-                                'voir dernier statistique',
+                                'Voir dernieres statistiques',
                                 style: TextStyle(
                                     fontSize: 18.0,
                                     fontWeight: FontWeight.bold,
@@ -78,7 +80,7 @@ class _StatistiquePageState extends State<StatistiquePage> {
                                               MainAxisAlignment.spaceBetween,
                                               children: <Widget>[
                                                 Text(
-                                                  "Suspect",
+                                                  "Suspects",
                                                   style: TextStyle(
                                                       color: Colors.amberAccent,
                                                       fontWeight: FontWeight
@@ -110,7 +112,7 @@ class _StatistiquePageState extends State<StatistiquePage> {
                                               MainAxisAlignment.spaceBetween,
                                               children: <Widget>[
                                                 Text(
-                                                  "Probable",
+                                                  "Probables",
                                                   style: TextStyle(
                                                       color: Colors
                                                           .purpleAccent,
@@ -149,7 +151,7 @@ class _StatistiquePageState extends State<StatistiquePage> {
                                               MainAxisAlignment.spaceBetween,
                                               children: <Widget>[
                                                 Text(
-                                                  "Deceder",
+                                                  "Décédés",
                                                   style: TextStyle(
                                                       color: Colors.redAccent,
                                                       fontWeight: FontWeight
@@ -181,7 +183,7 @@ class _StatistiquePageState extends State<StatistiquePage> {
                                               MainAxisAlignment.spaceBetween,
                                               children: <Widget>[
                                                 Text(
-                                                  "Gueri",
+                                                  "Guéris",
                                                   style: TextStyle(
                                                       color: Colors.greenAccent,
                                                       fontWeight: FontWeight
@@ -216,7 +218,7 @@ class _StatistiquePageState extends State<StatistiquePage> {
                                               MainAxisAlignment.spaceBetween,
                                               children: <Widget>[
                                                 Text(
-                                                  "Confirmer",
+                                                  "Confirmés",
                                                   style: TextStyle(
                                                       color: Colors
                                                           .orangeAccent,
@@ -248,7 +250,7 @@ class _StatistiquePageState extends State<StatistiquePage> {
                                               children: <Widget>[
                                                 Text(
 
-                                                  "Vaccinées",
+                                                  "Vaccinés",
                                                   style: TextStyle(
                                                       color: Colors.blue,
                                                       fontWeight: FontWeight

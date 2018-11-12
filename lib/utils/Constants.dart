@@ -7,8 +7,8 @@ class Constants{
   static const String Post = 'Post';
 
   static const List<String> choices = <String>[
-    Deconnexion,
-    Connexion,
+    //Deconnexion,
+    //Connexion,
     ModeExpert,
 
   ];

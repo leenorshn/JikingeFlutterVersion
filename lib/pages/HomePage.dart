@@ -9,6 +9,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+
   Widget _buildListItem(BuildContext context, DocumentSnapshot document) {
     return Card(
       child: Container(
@@ -16,15 +18,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
 
           children: <Widget>[
-            //entete
-            /* ListTile(
-              leading: CircleAvatar(radius: 45.0,
-                backgroundImage: NetworkImage(document["auteur"]),
-              ),
-              trailing: Text(document["timestamp"]),
-              title: Text(document["auteur"]),
-            ),*/
-            //image
+
             GestureDetector(
               onTap: () => navigateToPostDetail(document),
               child: Image.network(
@@ -37,7 +31,7 @@ class _HomePageState extends State<HomePage> {
             Container(
                 padding: EdgeInsets.all(12.0),
                 child: Text(
-                  "${document["contenu"].substring(0, 60)} ...",
+                  "${document["contenu"].substring(0, 25)}. ...",
                   style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w400),
                   textAlign: TextAlign.justify,
                 )),
@@ -80,8 +74,8 @@ class _HomePageState extends State<HomePage> {
                         vertical: 16.0, horizontal: 8.0),
                     itemCount: snapshot.data.documents.length,
                     itemBuilder: (context, index) {
-                      DocumentSnapshot ds = snapshot.data.documents[index];
-                      return _buildListItem(context, ds);
+                      return _buildListItem(
+                          context, snapshot.data.documents[index]);
                     },
                   );
               }

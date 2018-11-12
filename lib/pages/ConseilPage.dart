@@ -40,26 +40,37 @@ class _ConseilPageState extends State<ConseilPage> {
         child: FutureBuilder(
             future: _data,
             builder: (BuildContext context, snapshot) {
+
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return Center(child: SmartLoader());
               } else {
                 return ListView.builder(
+
+                    padding: EdgeInsets.symmetric(
+                        vertical: 16.0, horizontal: 16.0),
                     itemCount: snapshot.data.length,
                     itemBuilder: (context, index) {
+                      //return Text(snapshot.data[index].data["contenu"]);
+
+                      DocumentSnapshot document = snapshot.data[index];
                       return Card(
                         child: ListTile(
                           title: Text(
-                            snapshot.data[index].data["titre"],
+                            "${ document["titre"]}",
                             style: TextStyle(
                                 fontSize: 20.0, fontWeight: FontWeight.w700),
-                            textAlign: TextAlign.justify,
                           ),
                           subtitle: Text(
-                            "${snapshot.data[index].data["contenu"].substring(
-                                0, 60)} ...",
-                            style:
-                            TextStyle(fontSize: 16.0, color: Colors.grey),
+                            "${ document["contenu"].substring(0, 25)} ...",
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 16.0,),
                             textAlign: TextAlign.justify,
+                          ),
+                          trailing: Text("lire plus",
+                            style:
+                            TextStyle(fontSize: 14.0, color: Colors.blue),
+                            textAlign: TextAlign.right,
                           ),
                           onTap: () => navigateToDetail(snapshot.data[index]),
                         ),

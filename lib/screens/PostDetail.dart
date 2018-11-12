@@ -17,17 +17,15 @@ class _PostDetailState extends State<PostDetail> {
   void initState() {
     super.initState();
   }
-
   @override
   void dispose() {
     super.dispose();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.post.data["titre"]),
+        title: Text("Post Detail"),
       ),
       body: Container(
           child: ListView(
@@ -45,12 +43,16 @@ class _PostDetailState extends State<PostDetail> {
                 color: Colors.lightBlue,
                 child: SizedBox(
                   height: 30.0,
-                  child: Text(
-                    "Commentaire",
-                    style: TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.white),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 16.0, horizontal: 16.0),
+                    child: Text(
+                      "Commentaire",
+                      style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.white),
+                    ),
                   ),
                 ),
               ),

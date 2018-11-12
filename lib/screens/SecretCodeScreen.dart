@@ -9,7 +9,7 @@ class SecretCode extends StatefulWidget {
 }
 
 class _SecretCodeState extends State<SecretCode> {
-  GlobalKey _key=new GlobalKey<FormState>();
+  GlobalKey<FormState> _key = new GlobalKey<FormState>();
   int _secretMot=1234;
 
   void _validAndSubmit(){
@@ -39,7 +39,7 @@ class _SecretCodeState extends State<SecretCode> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Secret code"),
+        title: Text("Code Secret"),
       ),
       body: Center(
         child: Form(
@@ -54,7 +54,7 @@ class _SecretCodeState extends State<SecretCode> {
                    textAlign: TextAlign.center,
                    obscureText: true,
                    onSaved: (value)=>_secretMot=int.parse(value),
-                   decoration: InputDecoration(labelText: "Code SMS",
+                   decoration: InputDecoration(labelText: "Entez le Code Ici",
                        border: OutlineInputBorder(
                          borderRadius: BorderRadius.circular(30.0),)),
                    

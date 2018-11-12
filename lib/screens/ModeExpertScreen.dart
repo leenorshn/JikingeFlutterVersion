@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:jikinge/pages/ChatsPage.dart';
+import 'package:jikinge/pages/ChatScreen.dart';
 import 'package:jikinge/pages/StatUserPage.dart';
 import 'package:jikinge/pages/SuggestionPage.dart';
 import 'package:jikinge/screens/ConseilScreenPage.dart';
@@ -9,6 +8,10 @@ import 'package:jikinge/screens/StatistiqueScreen.dart';
 import 'package:jikinge/utils/Constants.dart';
 
 class ExpertScreen extends StatefulWidget {
+  final String currentUserId;
+
+  ExpertScreen({this.currentUserId});
+
   @override
   _ExpertScreenState createState() => _ExpertScreenState();
 }
@@ -58,7 +61,7 @@ class _ExpertScreenState extends State<ExpertScreen>
       body: TabBarView(
         controller: _tabController,
         children: [
-          new ChatsPage(),
+          new ChatScreen(),
           new SuggestionPage(),
           new StatUserPage(),
         ],
@@ -67,19 +70,19 @@ class _ExpertScreenState extends State<ExpertScreen>
   }
 
   void choiceAction(String choice) {
-    if (choice == Constants.Post) {
+    if (choice == Constants.Statistique) {
       // mover de l'ecran principale vers le ModeExpert
       Navigator.of(context).push(
           MaterialPageRoute(builder: (context) => StatistiqueScreen()));
-      print('Mode expert');
+      print('statistique');
     } else if (choice == Constants.Conseil) {
       Navigator.of(context).push(
           MaterialPageRoute(builder: (context) => ConseilScreenPage()));
-      print('Subscribe');
-    } else if (choice == Constants.Statistique) {
+      print('conseil');
+    } else if (choice == Constants.Post) {
       Navigator.of(context).push(
           MaterialPageRoute(builder: (context) => PostScreenPage()));
-      print('Subscribe');
+      print('post');
     }
   }
 }

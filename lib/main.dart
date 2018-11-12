@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:jikinge/MainPage.dart';
 
-void main() {
-  SystemChrome.setPreferredOrientations([
-
+void main() async {
+  await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
-    // DeviceOrientation.portraitDown
-  ]).then((_) {
-    runApp(EbolaApp());
-  });
+    DeviceOrientation.portraitDown
+  ]);
+  runApp(new EbolaApp());
 }
 
 class EbolaApp extends StatelessWidget {
@@ -21,8 +19,7 @@ class EbolaApp extends StatelessWidget {
        primarySwatch: Colors.deepOrange
       ),
 
-      home: MainPage(),
-    );
+        home: MainPage());
   }
 }
 
